@@ -36,7 +36,7 @@ python3 utils/split.py data/examples --dirname data/split \
 # Training a model
 ```
 python3 models_definitions/tree_nn.py \
-	--train_set data/examples_subset \
+	--train_set data/split/train \
 	--valid_set data/split/valid \
 	--epoch 500
 ```
