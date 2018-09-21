@@ -27,3 +27,11 @@ mkdir data/split
 python3 utils/split.py data/examples --dirname data/split \
 									 --train 0.5 --valid 0.3 --test 0.2
 ```
+
+# Training a model
+```
+python3 models_definitions/tree_nn.py \
+	--train_set data/examples_subset \
+	--valid_set data/split/valid \
+	--epoch 500
+```
