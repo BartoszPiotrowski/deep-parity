@@ -23,7 +23,7 @@ class SymbolNetwork(torch.nn.Module):
 
 
 class ConstantNetwork(torch.nn.Module):
-    def __init__(self, dim_in=3, dim_h=32, dim_out=32):
+    def __init__(self, dim_in=10, dim_h=32, dim_out=32):
         super(ConstantNetwork, self).__init__()
         self.model = torch.nn.Sequential(
             torch.nn.Linear(dim_in, dim_h),
@@ -70,14 +70,11 @@ def consts_to_tensors(all_consts):
     return {v: torch.tensor([one_hot(v, all_consts)], dtype=torch.float)
                         for v in all_consts}
 
-def instanciate_modules(symbols, modulo):
+def instanciate_modules(symbols, n_numbers, modulo):
     modules = {}
-    for symb in symbols:
-        modules[symb] = \
-            SymbolNetwork(symb, symbols[symb]) \
-                    if symbols[symb] else \
-            ConstantNetwork(symb, symbols[symb])
-    modules['CONST'] = ConstantNetwork()
+    for symb in symbols: # TODO control this
+        modules[symb] =  SymbolNetwork(symb, symbols[symb])
+    modules['CONST'] = ConstantNetwork(dim_in=n_numbers)
     modules['MODULO'] = ModuloNetwork(dim_out=modulo)
     return modules
 
@@ -194,7 +191,7 @@ labels_valid, inputs_valid = load_data(args.valid_set)
 modulo = max(i.item() for i in labels_train + labels_valid) + 1
 numbers = set(''.join(inputs_train + inputs_valid)) - set(SYMBOLS_WITH_ARITIES)
 consts_as_tensors = consts_to_tensors(numbers)
-modules = instanciate_modules(SYMBOLS_WITH_ARITIES, modulo)
+modules = instanciate_modules(SYMBOLS_WITH_ARITIES, len(numbers), modulo)
 params_of_modules = parameters_of_modules(modules)
 loss_1 = loss
 optim_1 = torch.optim.SGD(params_of_modules, lr=0.001, momentum=0.7)
