@@ -2,10 +2,10 @@ import argparse
 from random import choice
 
 
-NUMBERS = [0, 1]
-# OPERATIONS = ['+', '-']
-OPERATIONS = ['+']
-LENGTHS = [3, 4, 5, 6, 7, 8]
+NUMBERS = [0, 1, 2]
+OPERATIONS = ['+', '-']
+# OPERATIONS = ['+']
+LENGTHS = [3, 4, 5, 6, 7, 8, 9, 10, 11]
 MODULO = 2
 
 def generate_aritmetic_expression(numbers, operations, lengths):

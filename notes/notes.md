@@ -1,6 +1,6 @@
 # How are experiments going?
 
-## 21.09.2018
+## 21.09.2018, commit: e2c5591
 This happened on 'easy' data set (only +, 1, 0):
 ```
 Epoch: 189. Loss 0.6931746207475662. Accuracy 0.524.
@@ -45,3 +45,31 @@ Epoch: 227. Loss 0.00014956307411193847. Accuracy 1.0.
 ```
 
 The stats are on training set; the first working version of treeNN.
+Similar situation on the more difficult dataset (with +, -, 0, 1, 2):
+```
+Epoch: 70. Loss 0.6921160946816206. Accuracy 0.514.
+Epoch: 71. Loss 0.6918926461488009. Accuracy 0.5153.
+Epoch: 72. Loss 0.6916303490310908. Accuracy 0.5176.
+Epoch: 73. Loss 0.6913758839130402. Accuracy 0.5142.
+Epoch: 74. Loss 0.6907735283702612. Accuracy 0.5206.
+Epoch: 75. Loss 0.6903210225135088. Accuracy 0.5209.
+Epoch: 76. Loss 0.6898594205617905. Accuracy 0.5245.
+Epoch: 77. Loss 0.6891386212795972. Accuracy 0.5285.
+Epoch: 78. Loss 0.688923718714714. Accuracy 0.5284.
+Epoch: 79. Loss 0.688395893445611. Accuracy 0.5297.
+Epoch: 80. Loss 0.6873950962007046. Accuracy 0.5277.
+Epoch: 81. Loss 0.6872827852964402. Accuracy 0.5309.
+Epoch: 82. Loss 0.6870496775388718. Accuracy 0.5293.
+Epoch: 83. Loss 0.6863596347272396. Accuracy 0.5318.
+Epoch: 84. Loss 0.684767290776968. Accuracy 0.5369.
+Epoch: 85. Loss 0.6844566337704658. Accuracy 0.5362.
+Epoch: 86. Loss 0.6842694052070379. Accuracy 0.5431.
+Epoch: 87. Loss 0.6816816687375307. Accuracy 0.5476.
+Epoch: 88. Loss 0.6765236690372228. Accuracy 0.553.
+Epoch: 89. Loss 0.3924415097892284. Accuracy 0.7581.
+Epoch: 90. Loss 8.710682392120362e-05. Accuracy 1.0.
+```
+
+
+And here you go. On the "difficult" data set (+, -, 0, 1, 2) we have perfect
+accuracy both on valid and test.

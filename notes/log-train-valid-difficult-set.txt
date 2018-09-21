@@ -1,0 +1,186 @@
+(dl) ➜  deep-parity git:(master) ✗ py models_definitions/tree_nn.py --train_set data/examples_subset --valid_set data/split/valid --epoch 1000
+Loss on training 0.6948637944579125. Accuracy on training 0.5006.
+Epoch: 0. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6945378789424896. Accuracy on training 0.5053.
+Epoch: 1. Accuracy on validation: 0.5064962279966471
+Loss on training 0.694407478761673. Accuracy on training 0.5047.
+Epoch: 2. Accuracy on validation: 0.5064962279966471
+Loss on training 0.694318741697073. Accuracy on training 0.5056.
+Epoch: 3. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6942263135015965. Accuracy on training 0.5069.
+Epoch: 4. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6941440417289734. Accuracy on training 0.5065.
+Epoch: 5. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6940739836394787. Accuracy on training 0.5067.
+Epoch: 6. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6940432311862708. Accuracy on training 0.5103.
+Epoch: 7. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6940028824210167. Accuracy on training 0.5105.
+Epoch: 8. Accuracy on validation: 0.5064962279966471
+Loss on training 0.693991892144084. Accuracy on training 0.5118.
+Epoch: 9. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6939728191375732. Accuracy on training 0.5122.
+Epoch: 10. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6939631040155888. Accuracy on training 0.5124.
+Epoch: 11. Accuracy on validation: 0.5064962279966471
+Loss on training 0.693955776810646. Accuracy on training 0.5123.
+Epoch: 12. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6939503872215748. Accuracy on training 0.5123.
+Epoch: 13. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6939422973334789. Accuracy on training 0.5107.
+Epoch: 14. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6939397442221642. Accuracy on training 0.5101.
+Epoch: 15. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6939264159083366. Accuracy on training 0.5107.
+Epoch: 16. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6939172904998064. Accuracy on training 0.51.
+Epoch: 17. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6939111665219069. Accuracy on training 0.5092.
+Epoch: 18. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6939054634153843. Accuracy on training 0.5102.
+Epoch: 19. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6938988889306784. Accuracy on training 0.5103.
+Epoch: 20. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6938998745977879. Accuracy on training 0.5105.
+Epoch: 21. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6938997357904911. Accuracy on training 0.5093.
+Epoch: 22. Accuracy on validation: 0.5064962279966471
+Loss on training 0.693895810815692. Accuracy on training 0.5098.
+Epoch: 23. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6938864048570395. Accuracy on training 0.5093.
+Epoch: 24. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6938841835469007. Accuracy on training 0.5106.
+Epoch: 25. Accuracy on validation: 0.5064962279966471
+Loss on training 0.693875906303525. Accuracy on training 0.5087.
+Epoch: 26. Accuracy on validation: 0.5064962279966471
+Loss on training 0.693870459613204. Accuracy on training 0.5091.
+Epoch: 27. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6938588663309813. Accuracy on training 0.5086.
+Epoch: 28. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6938456984370946. Accuracy on training 0.5087.
+Epoch: 29. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6938377487331628. Accuracy on training 0.5089.
+Epoch: 30. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6938340966373682. Accuracy on training 0.5084.
+Epoch: 31. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6938152557969093. Accuracy on training 0.5083.
+Epoch: 32. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6938121584326029. Accuracy on training 0.5088.
+Epoch: 33. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6937986564695835. Accuracy on training 0.5074.
+Epoch: 34. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6937915132671595. Accuracy on training 0.5076.
+Epoch: 35. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6937815034270286. Accuracy on training 0.5087.
+Epoch: 36. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6937684344857931. Accuracy on training 0.5085.
+Epoch: 37. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6937655573695898. Accuracy on training 0.5101.
+Epoch: 38. Accuracy on validation: 0.5064962279966471
+Loss on training 0.693754845225811. Accuracy on training 0.5102.
+Epoch: 39. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6937479025691747. Accuracy on training 0.5108.
+Epoch: 40. Accuracy on validation: 0.5064962279966471
+Loss on training 0.693736833885312. Accuracy on training 0.5094.
+Epoch: 41. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6937305987089872. Accuracy on training 0.5096.
+Epoch: 42. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6937159493535757. Accuracy on training 0.5094.
+Epoch: 43. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6937037005335093. Accuracy on training 0.5104.
+Epoch: 44. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6936922068804503. Accuracy on training 0.5115.
+Epoch: 45. Accuracy on validation: 0.5064962279966471
+^[[ALoss on training 0.693679045394063. Accuracy on training 0.5116.
+Epoch: 46. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6936671031028032. Accuracy on training 0.5112.
+Epoch: 47. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6936404906064272. Accuracy on training 0.5121.
+Epoch: 48. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6936226506710053. Accuracy on training 0.5127.
+Epoch: 49. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6935922255396842. Accuracy on training 0.5131.
+Epoch: 50. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6935825730502605. Accuracy on training 0.5125.
+Epoch: 51. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6935677982181311. Accuracy on training 0.513.
+Epoch: 52. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6935351892828941. Accuracy on training 0.5128.
+Epoch: 53. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6935156518578529. Accuracy on training 0.5121.
+Epoch: 54. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6934939947128296. Accuracy on training 0.5117.
+Epoch: 55. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6934625366717577. Accuracy on training 0.5115.
+Epoch: 56. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6934443647325039. Accuracy on training 0.5112.
+Epoch: 57. Accuracy on validation: 0.5064962279966471
+Loss on training 0.6933892400860786. Accuracy on training 0.5092.
+Epoch: 58. Accuracy on validation: 0.5067057837384744
+Loss on training 0.6933698236286641. Accuracy on training 0.5104.
+Epoch: 59. Accuracy on validation: 0.5081726739312658
+Loss on training 0.6933431440711021. Accuracy on training 0.5097.
+Epoch: 60. Accuracy on validation: 0.5117351215423303
+Loss on training 0.6933381098747253. Accuracy on training 0.511.
+Epoch: 61. Accuracy on validation: 0.510896898575021
+Loss on training 0.6932452539861202. Accuracy on training 0.5127.
+Epoch: 62. Accuracy on validation: 0.510896898575021
+Loss on training 0.6932398460060358. Accuracy on training 0.5131.
+Epoch: 63. Accuracy on validation: 0.5092204526404024
+Loss on training 0.6931477894842625. Accuracy on training 0.5115.
+Epoch: 64. Accuracy on validation: 0.5098491198658843
+Loss on training 0.6930451513856649. Accuracy on training 0.5123.
+Epoch: 65. Accuracy on validation: 0.5100586756077117
+Loss on training 0.6930094132840633. Accuracy on training 0.5118.
+Epoch: 66. Accuracy on validation: 0.509639564124057
+Loss on training 0.6929353531599045. Accuracy on training 0.5128.
+Epoch: 67. Accuracy on validation: 0.5100586756077117
+Loss on training 0.6928478277504444. Accuracy on training 0.5145.
+Epoch: 68. Accuracy on validation: 0.5094300083822296
+Loss on training 0.6927663967549801. Accuracy on training 0.5155.
+Epoch: 69. Accuracy on validation: 0.5088013411567477
+Loss on training 0.6925952192187309. Accuracy on training 0.5209.
+Epoch: 70. Accuracy on validation: 0.5079631181894384
+Loss on training 0.6924122221320868. Accuracy on training 0.5197.
+Epoch: 71. Accuracy on validation: 0.5060771165129925
+Loss on training 0.6922717893630266. Accuracy on training 0.5193.
+Epoch: 72. Accuracy on validation: 0.5062866722548198
+Loss on training 0.6920568416804075. Accuracy on training 0.5205.
+Epoch: 73. Accuracy on validation: 0.5056580050293378
+Loss on training 0.6918120722204447. Accuracy on training 0.5208.
+Epoch: 74. Accuracy on validation: 0.5069153394803018
+Loss on training 0.6916320223480463. Accuracy on training 0.5206.
+Epoch: 75. Accuracy on validation: 0.5054484492875104
+Loss on training 0.6913012705892324. Accuracy on training 0.523.
+Epoch: 76. Accuracy on validation: 0.5039815590947192
+Loss on training 0.6910314044713974. Accuracy on training 0.5227.
+Epoch: 77. Accuracy on validation: 0.5037720033528919
+Loss on training 0.6909105106264353. Accuracy on training 0.5225.
+Epoch: 78. Accuracy on validation: 0.5039815590947192
+Loss on training 0.6907129810094833. Accuracy on training 0.5257.
+Epoch: 79. Accuracy on validation: 0.5033528918692373
+Loss on training 0.6901260512322187. Accuracy on training 0.5292.
+Epoch: 80. Accuracy on validation: 0.5069153394803018
+Loss on training 0.6898619947463274. Accuracy on training 0.5303.
+Epoch: 81. Accuracy on validation: 0.5046102263202011
+Loss on training 0.6894343423187733. Accuracy on training 0.5317.
+Epoch: 82. Accuracy on validation: 0.5044006705783739
+Loss on training 0.68881863450706. Accuracy on training 0.5341.
+Epoch: 83. Accuracy on validation: 0.5069153394803018
+Loss on training 0.6882547928869724. Accuracy on training 0.5306.
+Epoch: 84. Accuracy on validation: 0.5031433361274099
+Loss on training 0.6873694210290909. Accuracy on training 0.5377.
+Epoch: 85. Accuracy on validation: 0.5041911148365466
+Loss on training 0.6862369443774223. Accuracy on training 0.5393.
+Epoch: 86. Accuracy on validation: 0.5052388935456832
+Loss on training 0.6822391699552536. Accuracy on training 0.545.
+Epoch: 87. Accuracy on validation: 0.5683151718357083
+Loss on training 0.35408128929436206. Accuracy on training 0.792.
+Epoch: 88. Accuracy on validation: 1.0
+Loss on training 0.00012087790966033935. Accuracy on training 1.0.
+Epoch: 89. Accuracy on validation: 1.0
+Loss on training 4.293336868286133e-05. Accuracy on training 1.0.
+Epoch: 90. Accuracy on validation: 1.0
+Loss on training 2.5318956375122072e-05. Accuracy on training 1.0.
+Epoch: 91. Accuracy on validation: 1.0
+
