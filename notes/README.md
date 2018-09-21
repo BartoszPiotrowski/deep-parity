@@ -72,4 +72,4 @@ Epoch: 90. Loss 8.710682392120362e-05. Accuracy 1.0.
 
 
 And here you go. On the "difficult" data set (+, -, 0, 1, 2) we have perfect
-accuracy both on valid and test. [Log.](https://github.com/BartoszPiotrowski/deep-parity/logs/log-train-valid-difficult-set.txt)
+accuracy both on valid and test. [Log.](https://github.com/BartoszPiotrowski/deep-parity/blob/master/logs/log-train-valid-difficult-set.txt)
