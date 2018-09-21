@@ -35,7 +35,7 @@ class ConstantNetwork(torch.nn.Module):
         return self.model(x)
 
 class ModuloNetwork(torch.nn.Module):
-    def __init__(self, dim_in=32, dim_h=32, dim_out=2): # dim_out = MODULO
+    def __init__(self, dim_in=32, dim_h=32, dim_out=2):
         super(ModuloNetwork, self).__init__()
         self.model = torch.nn.Sequential(
             torch.nn.Linear(dim_in, dim_h),
@@ -70,7 +70,7 @@ def consts_to_tensors(all_consts):
     return {v: torch.tensor([one_hot(v, all_consts)], dtype=torch.float)
                         for v in all_consts}
 
-def instanciate_modules(symbols):
+def instanciate_modules(symbols, modulo):
     modules = {}
     for symb in symbols:
         modules[symb] = \
@@ -78,7 +78,7 @@ def instanciate_modules(symbols):
                     if symbols[symb] else \
             ConstantNetwork(symb, symbols[symb])
     modules['CONST'] = ConstantNetwork()
-    modules['MODULO'] = ModuloNetwork()
+    modules['MODULO'] = ModuloNetwork(dim_out=modulo)
     return modules
 
 
@@ -184,18 +184,18 @@ parser.add_argument(
 args = parser.parse_args()
 
 
-MODULO = 2
-NUMBERS = ['0', '1', '2']
 SYMBOLS_WITH_ARITIES = {
     '+': 2,
     '-': 2
 }
 
-consts_as_tensors = consts_to_tensors(NUMBERS)
-modules = instanciate_modules(SYMBOLS_WITH_ARITIES)
-params_of_modules = parameters_of_modules(modules)
 labels_train, inputs_train = load_data(args.train_set)
 labels_valid, inputs_valid = load_data(args.valid_set)
+modulo = max(i.item() for i in labels_train + labels_valid) + 1
+numbers = set(''.join(inputs_train + inputs_valid)) - set(SYMBOLS_WITH_ARITIES)
+consts_as_tensors = consts_to_tensors(numbers)
+modules = instanciate_modules(SYMBOLS_WITH_ARITIES, modulo)
+params_of_modules = parameters_of_modules(modules)
 loss_1 = loss
 optim_1 = torch.optim.Adam(params_of_modules, lr=0.001)
 for e in range(args.epochs):
