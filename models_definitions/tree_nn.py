@@ -197,7 +197,7 @@ consts_as_tensors = consts_to_tensors(numbers)
 modules = instanciate_modules(SYMBOLS_WITH_ARITIES, modulo)
 params_of_modules = parameters_of_modules(modules)
 loss_1 = loss
-optim_1 = torch.optim.Adam(params_of_modules, lr=0.001)
+optim_1 = torch.optim.SGD(params_of_modules, lr=0.001, momentum=0.7)
 for e in range(args.epochs):
     train(inputs_train, labels_train, modules, loss_1, optim_1)
     acc = accuracy(inputs_valid, labels_valid, modules)
