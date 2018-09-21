@@ -197,7 +197,7 @@ params_of_modules = parameters_of_modules(modules)
 labels_train, inputs_train = load_data(args.train_set)
 labels_valid, inputs_valid = load_data(args.valid_set)
 loss_1 = loss
-optim_1 = torch.optim.SGD(params_of_modules, lr=0.001, momentum=0.9)
+optim_1 = torch.optim.Adam(params_of_modules, lr=0.001)
 for e in range(args.epochs):
     train(inputs_train, labels_train, modules, loss_1, optim_1)
     acc = accuracy(inputs_valid, labels_valid, modules)
