@@ -47,6 +47,17 @@ class ModuloNetwork(torch.nn.Module):
         return self.model(x)
 
 
+def load_data(filename):
+    labels = []
+    inputs = []
+    with open(filename, 'r') as f:
+        for line in f:
+            label, term = line.strip('\n').split(' ')
+            labels.append(torch.tensor([int(label)]))
+            inputs.append(term)
+    return labels, inputs
+
+
 def one_hot(elem, elems):
     if isinstance(elems, int):
         assert 0 <= elem < elems
@@ -96,12 +107,14 @@ def loss(outputs, targets):
     return criterion(outputs, targets)
 
 
-def train(inputs, labels, model, loss, optimizer, epochs=1):
+def train(inputs, labels, modules, loss, optimizer, epochs=1):
+    _model = lambda term: model(term, parse, modules, consts_as_tensors)
+    assert len(inputs) == len(labels)
     for e in range(epochs):
         ls = []
         ps = []
         for i in range(len(inputs)):
-            p = model(inputs[i])
+            p = _model(inputs[i])
             l = loss(p, labels[i])
             ls.append(l.item())
             ps.append(p.argmax().item())
@@ -111,18 +124,22 @@ def train(inputs, labels, model, loss, optimizer, epochs=1):
         l_avg = sum(ls) / len(ls)
         acc = sum(ps[i] == labels[i].item() \
                   for i in range(len(labels))) / len(labels)
-        print('Epoch: {}. Loss {}. Accuracy {}.'.format(e, l_avg, acc))
+        print("Loss on training {}. Accuracy on training {}.".format(l_avg, acc))
+
+
+
+
+def predict(inputs, model):
+    return [model(i).argmax().item() for i in inputs]
+
+def accuracy(inputs, labels, modules):
+    _model = lambda term: model(term, parse, modules, consts_as_tensors)
+    preds = predict(inputs, _model)
+    return sum(preds[i] == labels[i].item() \
+               for i in range(len(labels))) / len(labels)
 
 
 ############ TEST ###############################################
-
-
-MODULO = 2
-NUMBERS = ['0', '1', '2']
-SYMBOLS_WITH_ARITIES = {
-    '+': 2,
-    '-': 2
-}
 
 
 parser = argparse.ArgumentParser()
@@ -132,7 +149,6 @@ parser.add_argument(
     help="Path to a training set.")
 parser.add_argument(
     "--valid_set",
-    default='data/split/equiv.valid',
     type=str,
     help="Path to a validation set.")
 parser.add_argument(
@@ -168,23 +184,22 @@ parser.add_argument(
 args = parser.parse_args()
 
 
+MODULO = 2
+NUMBERS = ['0', '1', '2']
+SYMBOLS_WITH_ARITIES = {
+    '+': 2,
+    '-': 2
+}
+
 consts_as_tensors = consts_to_tensors(NUMBERS)
 modules = instanciate_modules(SYMBOLS_WITH_ARITIES)
 params_of_modules = parameters_of_modules(modules)
-
-labels = []
-inputs = []
-with open(args.train_set, 'r') as f:
-    for line in f:
-        label, term = line.strip('\n').split(' ')
-        labels.append(torch.tensor([int(label)]))
-        inputs.append(term)
-
-model_1 = lambda term: model(term, parse, modules, consts_as_tensors)
+labels_train, inputs_train = load_data(args.train_set)
+labels_valid, inputs_valid = load_data(args.valid_set)
 loss_1 = loss
-optimizer_1 = torch.optim.SGD(params_of_modules, lr=0.001, momentum=0.9)
-train(inputs, labels, model_1, loss_1, optimizer_1, epochs=args.epochs)
-
-
-############ TEST ENDED #########################################
+optim_1 = torch.optim.SGD(params_of_modules, lr=0.001, momentum=0.9)
+for e in range(args.epochs):
+    train(inputs_train, labels_train, modules, loss_1, optim_1)
+    acc = accuracy(inputs_valid, labels_valid, modules)
+    print("Epoch: {}. Accuracy on validation: {}".format(e, acc))
 
