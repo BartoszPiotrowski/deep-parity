@@ -40,3 +40,8 @@ python3 models_definitions/tree_nn.py \
 	--valid_set data/split/valid \
 	--epoch 500
 ```
+
+# Plotting logs
+```
+Rscript utils/plot.R logs/some.log plots/
+```
