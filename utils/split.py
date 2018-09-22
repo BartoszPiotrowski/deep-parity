@@ -6,7 +6,7 @@ usage: python3 utils/dedup_and_split.py file --train 0.5 --valid 0.2 --test 0.3
 '''
 
 
-SEP = ' ' # TODO make use of it
+SEP = ' '  # TODO make use of it
 
 
 def parse_and_dedup_examples(filename, sep=' '):
@@ -69,6 +69,13 @@ def write_examples(labels, examples, filename, sep=' '):
         f.write('\n'.join(lines) + '\n')
 
 
+def write_vocab(examples, filename):
+    lines = list(set(''.join(examples)))
+    with open(filename, 'w') as f:
+        f.write('\n'.join(lines) + '\n')
+
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Split file with training examples into three balanced.")
@@ -93,3 +100,5 @@ labels, examples = parse_and_dedup_examples(args.filename)
 write_examples(train_labels, train_examples, args.dirname + '/train')
 write_examples(valid_labels, valid_examples, args.dirname + '/valid')
 write_examples(test_labels, test_examples, args.dirname + '/test')
+write_vocab(examples, args.dirname + '/vocab')
+write_vocab(labels, args.dirname + '/labels')
