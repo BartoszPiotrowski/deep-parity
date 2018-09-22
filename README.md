@@ -33,13 +33,38 @@ python3 utils/split.py data/examples --dirname data/split \
 									 --train 0.5 --valid 0.3 --test 0.2
 ```
 
-# Training a model
+# Training models
+We have two models available: TreeNN and bidirectional RNN.
+
+## Training TreeNN
 ```
 python3 models_definitions/tree_nn.py \
 	--train_set data/split/train \
 	--valid_set data/split/valid \
 	--epoch 500
 ```
+## Training RNN
+```
+python3 models_definitions/r-nn.py \
+	--train_set data/split/train \
+	--valid_set data/split/valid \
+	--vocab data/split/vocab \
+	--batch_size 128 \
+	--epochs 64 \
+	--embed_dim 8 \
+	--rnn_cell_dim 16 \
+	--num_dense_layers 2 \
+	--dense_layer_units 32
+```
+
+### Quering trained RNN model.
+```
+python3 utils/predict_r_nn.py \
+	--model models_pretrained/rnn/first_try/model \
+	--pairs models_pretrained/rnn/first_try/data/split/test_no_labels \
+	--vocab models_pretrained/rnn/first_try/data/split/vocab
+```
+
 
 # Plotting logs
 ```
