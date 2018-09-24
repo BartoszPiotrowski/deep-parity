@@ -5,7 +5,7 @@ TreeNN for recognizing parity of arithmetic expressions (like 1 + 3 - 2 + 1)
 Run this:
 ```
 mkdir data
-python3 utils/generate.py
+python3 utils/generate.py \
 	-n 30000 \
 	--modulo 2 \
 	--numbers 0,1,2 \
