@@ -119,9 +119,9 @@ def train(inputs, labels, modules, loss, optimizer, epochs=1):
             l.backward()
             optimizer.step()
         l_avg = sum(ls) / len(ls)
-        acc = sum(ps[i] == labels[i].item() \
-                  for i in range(len(labels))) / len(labels)
-        print("Loss on training {}. Accuracy on training {}.".format(l_avg, acc))
+        #acc = sum(ps[i] == labels[i].item() \
+        #          for i in range(len(labels))) / len(labels)
+        #print("Loss on training {}. Accuracy on training {}.".format(l_avg, acc))
 
 
 
@@ -149,11 +149,6 @@ parser.add_argument(
     type=str,
     help="Path to a validation set.")
 parser.add_argument(
-    "--test_set",
-    default='',
-    type=str,
-    help="Path to a testing set.")
-parser.add_argument(
     "--model_path",
     default='',
     type=str,
@@ -180,6 +175,9 @@ parser.add_argument(
     help="Logdir.")
 args = parser.parse_args()
 
+if not args.logdir:
+    args.logdir = args.train_set + '.log'
+
 
 SYMBOLS_WITH_ARITIES = {
     '+': 2,
@@ -194,9 +192,11 @@ consts_as_tensors = consts_to_tensors(numbers)
 modules = instanciate_modules(SYMBOLS_WITH_ARITIES, len(numbers), modulo)
 params_of_modules = parameters_of_modules(modules)
 loss_1 = loss
-optim_1 = torch.optim.SGD(params_of_modules, lr=0.001, momentum=0.7)
+optim_1 = torch.optim.SGD(params_of_modules, lr=0.001, momentum=0.8)
 for e in range(args.epochs):
     train(inputs_train, labels_train, modules, loss_1, optim_1)
     acc = accuracy(inputs_valid, labels_valid, modules)
     print("Epoch: {}. Accuracy on validation: {}".format(e, acc))
+    with open(args.logdir, 'a') as f:
+        print("Epoch: {}. Accuracy on validation: {}".format(e, acc), file=f)
 
