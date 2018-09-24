@@ -1,0 +1,8 @@
+models_definitions/tree_nn.py --valid_set data/mod2_num2/valid  --valid_set data/mod2_num2/valid  --epoch 500
+models_definitions/tree_nn.py --valid_set data/mod2_num3/valid  --valid_set data/mod2_num3/valid  --epoch 500
+models_definitions/tree_nn.py --valid_set data/mod2_num4/valid  --valid_set data/mod2_num4/valid  --epoch 500
+models_definitions/tree_nn.py --valid_set data/mod2_num5/valid  --valid_set data/mod2_num5/valid  --epoch 500
+models_definitions/tree_nn.py --valid_set data/mod2_num6/valid  --valid_set data/mod2_num6/valid  --epoch 500
+models_definitions/tree_nn.py --valid_set data/mod2_num7/valid  --valid_set data/mod2_num7/valid  --epoch 500
+models_definitions/tree_nn.py --valid_set data/mod2_num8/valid  --valid_set data/mod2_num8/valid  --epoch 500
+models_definitions/tree_nn.py --valid_set data/mod2_num9/valid  --valid_set data/mod2_num9/valid  --epoch 500
